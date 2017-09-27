@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      COOL DESKTOP BACKGROUNDS
+      {{cards.length}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -26,13 +26,13 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button clear icon-start>
-          <ion-icon name="share-alt"></ion-icon>
+        <button ion-button clear icon-start (click)="clickShared(card)">
+          <ion-icon [name]="(card.shared) ? 'share' : 'share-outline'"></ion-icon>
           Share
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button clear icon-start>
+        <button ion-button clear icon-start (click)="deleteCard(card)">
           <ion-icon name="trash"></ion-icon>
           Delete
         </button>
